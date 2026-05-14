@@ -1,0 +1,14 @@
+---
+- name: create a directory and copy files into it
+  hosts: all
+  become: yes
+  tasks:
+    - name: create a directory
+      file:
+        path: /tmp/dir1
+        state: directory
+    - name: copy playbook file
+      copy:
+        src: playbook1.yml
+        dest: /tmp/dir1/
+...
