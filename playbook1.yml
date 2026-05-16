@@ -1,7 +1,7 @@
 ---
 - name: create user on all servers
-  hosts: all
-  tasks:
+  hosts: servers
+  tasks: 
     - name: create user
       user:
         name: Anu
