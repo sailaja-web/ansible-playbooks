@@ -3,23 +3,29 @@
   hosts: all
 
   tasks:
-
     - name: Install apache2
       apt:
         name: apache2
         state: present
         update_cache: yes
+      notify:
+        - restart apache2
 
-    - name: edit the index.html file
+    - name: Edit the index.html file
       copy:
-        content: "Welcome to Ansible Handlers"
+        content: "Welcome to my Updated Ansible Handlers"
         dest: /var/www/html/index.html
-      notify: restart apache2
+      notify:
+        - check url response
 
   handlers:
-
     - name: restart apache2
       service:
         name: apache2
         state: restarted
+
+    - name: check url response
+      uri:
+        url: http://localhost
+        status_code: 200
 ...
