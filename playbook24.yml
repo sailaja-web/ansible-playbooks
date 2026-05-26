@@ -1,0 +1,22 @@
+---
+- name: working on users
+  hosts: all
+  tasks:
+    - name: create user
+      user:
+        name: Anu
+        password: intelliqit
+        uid: 5678
+      register: a
+
+    - name: Display output of the above module
+      debug:
+        var: a
+
+    - name: Change shell of user if home dir of user is /tmp/Anu
+      user:
+        name: Anu
+        shell: /bin/sh
+      when: a.home == "/tmp/Anu"
+...
+
