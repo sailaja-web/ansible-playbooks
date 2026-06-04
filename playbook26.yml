@@ -1,0 +1,14 @@
+---
+- name: Capture OS info
+  hosts: all
+  tasks:
+    - name: capture OS name
+      debug:
+        msg: "{{ ansible_facts.distribution }}"
+    - name: capture OS version
+      debug:
+        msg: "{{ ansible_facts.distribution_version }}"
+    - name: Capture OS major version no
+      debug:
+        msg: "{{ ansible_facts.distribution_major_version }}"
+...
