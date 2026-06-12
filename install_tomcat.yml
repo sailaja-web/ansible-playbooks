@@ -1,7 +1,7 @@
 ---
-- name: Install apache2
+- name: Install tomcat
   apt:
-    name: apache2
+    name: tomcat10
     state: present
     update_cache: yes
 ...

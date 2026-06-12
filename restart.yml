@@ -3,10 +3,4 @@
   service:
     name: apache2
     state: restarted
-  when: ansible_facts.distribution == "Ubuntu"
-- name: Restart httpd
-  service:
-    name: httpd
-    state: restarted
-  when: ansible_facts.distribution == "RedHat"
 ...

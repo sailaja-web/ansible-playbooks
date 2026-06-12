@@ -15,7 +15,7 @@
       service:
         name: apache2
         state: restarted
-    - name: check apache response locally
+    - name: check apache response on both servers
       uri:
         url: http://localhost
         status_code: 200

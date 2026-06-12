@@ -3,10 +3,10 @@
   hosts: all
   tasks:
     - name: Call multiple Child playbook for apache
-      include_tasks: "{{item}}"
+      include_tasks: "{{ item }}"
       with_items:
-          - install.yml
-          - edit_index.yml
-          - restart.yml
-          - check_url_response.yml
+        - install.yml 
+        - edit_index.yml
+        - restart.yml
+        - check_url_response.yml
 ...
