@@ -1,6 +1,6 @@
 ---
 - name: Implementing host scope variables
-  hosts: 172.31.30.97
+  hosts: 172.31.4.20
   tasks:
     - name: user creation
       user:
